@@ -155,6 +155,23 @@ class Model8(nn.Module):
         model8.eval()
         return model8(X)
 
+class Model9(nn.Module):
+
+    def __init__(self):
+        # ### # Initialize model
+        model = models.resnet50(pretrained=False)
+        # ### Load state_dict
+        state_dict = torch.load(Model8_path)
+        model.load_state_dict(state_dict)
+        # model.eval()
+        #self.model1 = torch.load(Model1_path)['state_dict']
+        self.model9 = model
+
+    def __call__(self, X):
+        model9 = self.model9
+        model9.eval()
+        return model9(X)
+
 
 
 
