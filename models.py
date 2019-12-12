@@ -21,7 +21,7 @@ class Model1(nn.Module):
 
     def __init__(self):
         # ### # Initialize model
-        model = models.resnet18(pretrained=False)
+        model = models.resnet34(pretrained=False)
         # ### Load state_dict
         state_dict = torch.load(Model1_path)
         model.load_state_dict(state_dict)
@@ -38,7 +38,7 @@ class Model2(nn.Module):
 
     def __init__(self):
         # ### # Initialize model
-        model = models.densenet161(pretrained=False)
+        model = models.resnet50(pretrained=False)
         # ### Load state_dict
         state_dict = torch.load(Model2_path)
         model.load_state_dict(state_dict)
@@ -55,7 +55,7 @@ class Model3(nn.Module):
 
     def __init__(self):
         # ### # Initialize model
-        model = models.vgg16(pretrained=False)
+        model = models.densenet201(pretrained=False)
         # ### Load state_dict
         state_dict = torch.load(Model3_path)
         model.load_state_dict(state_dict)
